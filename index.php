@@ -1,45 +1,71 @@
+<!DOCTYPE html>
 <html>
-<head>
-	<body>
-		<?php
-		if (isset($proc)){
-			printf("El valor egresado es: $texto");
-
-		}
-		
-			else{
-				echo "rellene los campos adqueridos";
-		}
-	?>
-	<form action="form1.php" method="POST">
-	<p><b>Nombre:</b> <input type="text" name="Nombre"></p>
-	<p><b>Apellido Paterno:</b> <input type="text" name="Apellido Paterno"></p>
-	<p><b>Apellido Materno:</b> <input type="text" name="Apellido Materno"></p>
-	<p><b>Edad:</b> <input type="text" name="Edad"></p>
-	<p><b>Direccion:</b> <input type="text" name="Direccion"></p>
-
-	 	<p>
-	   	<b>Profesion:</b>
-	   		<select> 
-	   		<option> Selecciona una Profecion </option>
-	   	 	<option> ING.SC</option>
-	   		<option> ING.I</option>
-	   		<option> ING.E</option>
-	   		<option> ING.L</option>
-	   		<option> ING.F</option>
-	   	</select>
-	   </p>
-
-		<p><input type="text" name="texto">
-		<input type="submit" name="proc"></p>
-
-	</form>
-	<?
-{
-}
-	?>
-
-
-	</body>
+	<head>
+		<title>Formulario</title>
 	</head>
+	<body>
+		<h1>Formulario</h1>
+		<form method="POST" action=""/>
+			<table BGCOLOR="#33DACE">
+				<tr>
+					<td>
+						Nombre:
+					</td>
+					<td>
+						<input type="name" name="nombre">
+					</td>	
+				</tr>
+				<tr>
+					<td>
+						Apellido Paterno:
+					</td>
+					<td>
+						<input type="name" name="apellidoP">
+					</td>	
+				</tr>
+				<tr>
+					<td>
+						Apellido Materno:
+					</td>
+					<td>
+						<input type="name" name="apellidoM">
+					</td>	
+				</tr>
+				<tr>
+					<td>
+						Edad:
+					</td>
+					<td>
+						<input type="name" name="edad">
+					</td>	
+				</tr>
+				<tr>
+					<td>
+						Direccion:
+					</td>
+					<td>
+						<input type="name" name="direccion">
+					</td>	
+				</tr>
+				<tr>
+					<td>
+						Perfil:
+					</td>
+					<td>
+						<select name="perfil">
+				        <option>Seleccione un Perfil</option>
+				        <option>Licenciado</option>
+				        <option>Ingeniero</option>
+				        </select>
+					</td>	
+				</tr>
+			</table>
+			<input type="submit" name="submit" value="Enviar"/> <input type="reset">
+		</form>
+		<?php
+			if (isset($_POST['submit'])) {
+				require("registro.php");
+			}
+		?>
+	</body>
 </html>
